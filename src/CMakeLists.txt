@@ -24,6 +24,8 @@ set(CCD_INCLUDES
   ccd/ccd_export.h
   ccd/quat.h
   ccd/vec3.h
+  ccd/simplex.h
+  ccd/support.h
   "${CMAKE_CURRENT_BINARY_DIR}/ccd/config.h")
 
 set(CCD_SOURCES
