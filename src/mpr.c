@@ -14,7 +14,7 @@
  *  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *  See the License for more information.
  */
-
+#include <stdio.h>
 #include <stdlib.h>
 #include <ccd/ccd.h>
 #include "simplex.h"
@@ -119,9 +119,9 @@ int ccdMPRPenetration(const void *obj1, const void *obj2, const ccd_t *ccd,
 {
     ccd_simplex_t portal;
     int res;
-
     // Phase 1: Portal discovery
     res = discoverPortal(obj1, obj2, ccd, &portal);
+
     if (res < 0){
         // Origin isn't inside portal - no collision.
         return -1;
@@ -143,7 +143,7 @@ int ccdMPRPenetration(const void *obj1, const void *obj2, const ccd_t *ccd,
         // Phase 3. Penetration info
         findPenetr(obj1, obj2, ccd, &portal, depth, dir, pos);
     }
-
+    
     return 0;
 }
 
